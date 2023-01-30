@@ -1,6 +1,6 @@
 # Ignore everything
 /*
-node_modules
+node_modules/
 # ...even if they are in subdirectories
 
 # But not these files
