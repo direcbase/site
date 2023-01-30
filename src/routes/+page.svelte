@@ -37,14 +37,14 @@
                 </div>
             </div> 
             <div class="mt-4 flex flex-1 justify-center space-x-2 lg:mt-6 lg:justify-start">
-                <a href="/docs" class="btn btn-ghost btn-active lg:btn-lg normal-case">
+                <a href="/#" class="btn btn-ghost btn-active lg:btn-lg normal-case">
                 <span class="hidden sm:inline">See documents</span> 
                 <span class="inline sm:hidden">Documents</span></a> 
                 <a  href="https://demo.direcbase.com" class="btn lg:btn-lg normal-case">Demo</a>
             </div>
         </div>
     </div>
-    <div class="w-1/2">
+    <div class="w-1/2  px-2">
         <div class="mockup-window border border-base-300">
             <figure><img src="/images/admin.png" alt="Shoes" /></figure>
         </div>
