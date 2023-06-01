@@ -1,1 +1,0 @@
-import"./index-05e8ed9e.js";function o(){window.gtag("event","page_view",{page_title:document.title,page_location:window.location.href,page_path:window.location.pathname})}function i({category:t,action:e,label:a}){window.gtag("event",e,{event_category:t,event_label:a})}export{o as a,i as t};

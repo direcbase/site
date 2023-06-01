@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<link href="../../../_app/immutable/assets/0.bb6d43c6.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/2.eeb3852f.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.9b7b15e9.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.fb248eef.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/singletons.36b5c02f.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.da7a9115.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/paths.227039e6.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/control.f5b05b5f.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.937a2d16.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.706fc7c0.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/ga.660e9210.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.a3180d09.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/contexts.4fb0369c.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.f9dbcb95.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/kit-docs.6f7a5f7a.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/11.4d96126b.js"><title>File storage | KitDocs</title><!-- HEAD_svelte-tuv76i_START --><meta name="description" content="Boostrap your SaaS in weekend with Direcbase"><!-- HEAD_svelte-tuv76i_END --><!-- HEAD_svelte-3cm5o9_START -->
+    <meta name="description" content="APIs usage for interaction with file storage services"><!-- HEAD_svelte-3cm5o9_END -->
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBFXHV0M29"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-BBFXHV0M29');
+		</script>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+
+
+<div class="navbar bg-base-100"><div class="navbar-start"><a class="btn btn-ghost normal-case text-xl" href="https://direcbase.com"><svg class="w-12 h-12" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><rect x="70.67" y="109.813" width="380.213" height="307.719" style="fill-opacity: 0.5; fill: rgb(33, 150, 243);" transform="matrix(0.999893, -0.014638, 0, 1.000107, -41.596203, -41.856361)"></rect><rect x="96.852" y="129.788" width="378.528" height="302.281" style="paint-order: fill; fill: rgb(33, 150, 243);"></rect><text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" transform="matrix(7.366238, 0, 0, 7.663194, -954.63739, -1198.932251)" x="149.161" y="201.647">DB</text></svg>
+        <span class="px-1">direcbase</span></a></div>
+    <div class="navbar-end"><ul class="menu menu-horizontal px-1"><li><a class="btn btn-ghost" href="/help">Documentation</a></li>
+          <li><a class="btn btn-ghost" href="http://github.com/direcbase"><svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="inline-block h-5 w-5 fill-current md:h-6 md:w-6"><path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z"></path></svg></a></li></ul></div></div>
+
+
+<div class="kit-docs bg-body text-inverse min-h-full min-w-full h-full transition-transform duration-150 ease-out" style="font-family: var(--kd-font-family-sans, inherit); --kd--navbar-height: calc(var(--kd-navbar-height) + var(--kd-breadcrumbs-height));">
+
+  <div class="mx-auto w-full flex flex-row min-h-full max-w-[var(--kd-content-max-width)]"><aside id="main-sidebar" class="sidebar self-start fixed top-0 left-0 transform bg-body z-50 border-border border-r scrollbar -translate-x-full transform transition-transform duration-200 ease-out will-change-transform max-h-screen min-h-screen min-w-[var(--kd-sidebar-min-width)] max-w-[var(--kd-sidebar-max-width)] 992:translate-x-0 922:block 992:sticky 992:z-0 overflow-y-auto p-[var(--kd-sidebar-padding)] 992:top-0 min-h-screen max-h-screen" role="dialog" aria-modal="true" style=""><div class="992:hidden sticky top-0 left-0 flex items-center"><div class="flex-1"></div>
+    <button class="text-soft hover:text-inverse p-4 -mx-6 pointer-events-none"><svg viewBox="0 0 24 24" width="24" height="24"><!-- HTML_TAG_START --><path fill="currentColor" d="m12 10.586l4.95-4.95l1.415 1.415l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.95 4.95l-1.413-1.415l4.95-4.95l-4.95-4.95L7.05 5.638l4.95 4.95Z"/><!-- HTML_TAG_END --></svg>
+      <span class="sr-only">Close sidebar</span></button></div>
+
+  <nav class="992:px-1 scrollbar">
+
+    
+
+    <ul class="mt-8 pb-28 992:pb-0">
+        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-strong 992:mb-3 mb-8 text-lg font-semibold">Getting Started
+            </h5>
+          <ul class="border-border space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/getting-started/introduction" style="">
+                  Introduction
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/getting-started/admin-dashboard" style="">
+                  Administration UIs
+                  </a>
+              </li></ul>
+        </li>
+        <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-strong 992:mb-3 mb-8 text-lg font-semibold">Development Kit Js
+            </h5>
+          <ul class="border-border space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/introduction" style="">
+                  Introduction to SDK Javascript
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direcauth" style="">
+                  Authentication
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direcstore" style="">
+                  Data storage
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 text-brand font-semibold" href="/help/docs/development-kit-js/direcfile" style="border-color: var(--kd-sidebar-border-active);">
+                  File storage
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direccall" style="">
+                  Function call
+                  </a>
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direcadmin" style="">
+                  Administration APIs
+                  </a>
+              </li></ul>
+        </li></ul>
+
+    
+        </nav></aside>
+
+<div class="992:hidden z-40"><div class="pointer-events-auto fixed top-0 left-0 z-40 backdrop-blur-sm backdrop-filter transition-opacity duration-75 bg-body/20 dark:bg-body/60 h-screen w-screen invisible opacity-0"></div></div>
+
+    <main class="w-full overflow-x-hidden min-h-screen px-8 992:px-16 pt-8" style="max-width: var(--kd-main-max-width, var(--kd-article-max-width));">
+
+      <article class="markdown prose dark:prose-invert z-10 max-w-[var(--kd-article-max-width)]"><p class="text-brand mb-3.5 text-[15px] font-semibold leading-6">Development Kit Js</p>
+
+          <h1>File storage</h1>
+<p>APIs usage for interaction with file storage services</p>
+<p>##Coming soon</p></article>
+
+      <hr class="border-border mt-20">
+
+        <div class="992:text-xl flex items-center pt-12 pb-20 text-lg font-semibold text-gray-300"><div class="mb-4 flex flex-col items-start"><span class="text-inverse ml-3 mb-4 inline-block">Previous</span>
+              
+  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/development-kit-js/direcstore" data-sveltekit-prefetch><span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">&lt;-</span>
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3 ">Data storage</span>
+    </a></div>
+
+          <div class="ml-auto mb-4 flex flex-col items-end"><span class="text-inverse mr-3 mb-4 inline-block">Next</span>
+              
+  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/development-kit-js/direccall" data-sveltekit-prefetch>
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">Function call</span>
+    <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">-&gt;</span></a></div></div>
+
+      </main>
+
+    <div class="992:flex-1"></div>
+
+    <div class="on-this-page scrollbar pt-8 pb-8 hidden overflow-auto min-w-[160px] sticky right-4 pr-4 1440:right-6 1440:pr-2 1280:block pl-0.5 top-0 max-h-screen" style=""></div></div></div>
+
+
+			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs_development-kit-js_direcfile.meta">{"status":200,"statusText":"","headers":{},"body":"{\"excerpt\":\"\",\"headers\":[],\"title\":\"File storage\",\"description\":\"APIs usage for interaction with file storage services\",\"frontmatter\":{\"title\":\"File storage\",\"description\":\"APIs usage for interaction with file storage services\"},\"lastUpdated\":1685620194177}"}</script>
+			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs.sidebar">{"status":200,"statusText":"","headers":{},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Introduction\",\"slug\":\"/help/docs/getting-started/introduction\"},{\"title\":\"Administration UIs\",\"slug\":\"/help/docs/getting-started/admin-dashboard\"}],\"Development Kit Js\":[{\"title\":\"Introduction to SDK Javascript\",\"slug\":\"/help/docs/development-kit-js/introduction\"},{\"title\":\"Authentication\",\"slug\":\"/help/docs/development-kit-js/direcauth\"},{\"title\":\"Data storage\",\"slug\":\"/help/docs/development-kit-js/direcstore\"},{\"title\":\"File storage\",\"slug\":\"/help/docs/development-kit-js/direcfile\"},{\"title\":\"Function call\",\"slug\":\"/help/docs/development-kit-js/direccall\"},{\"title\":\"Administration APIs\",\"slug\":\"/help/docs/development-kit-js/direcadmin\"}]}}"}</script>
+			<script>
+				{
+					__sveltekit_2d7grd = {
+						base: new URL("../../..", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.9b7b15e9.js"),
+						import("../../../_app/immutable/entry/app.937a2d16.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 11],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
