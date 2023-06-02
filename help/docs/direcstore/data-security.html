@@ -7,20 +7,21 @@
 		
 		<link href="../../../_app/immutable/assets/0.ebedb8cc.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/2.eeb3852f.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/start.e7b83469.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.800fcd66.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.fb248eef.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/singletons.e296ec02.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/singletons.f5897cf8.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/index.da7a9115.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/paths.caabf1e7.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/paths.b73d17e4.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/control.f5b05b5f.js">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/app.9833e062.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.4ba086e1.js">
 		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.4ff4ba01.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/ga.660e9210.js">
-		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.735a4aa1.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/contexts.1789361e.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.a5549d51.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/2.b8937d61.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/contexts.f1f48bcd.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.d466044a.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/kit-docs.6f7a5f7a.js">
-		<link rel="modulepreload" href="../../../_app/immutable/nodes/17.cc08ef11.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/17.6a1e46b5.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/CodeFence.e90b34b2.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/Link.5090cb4d.js"><title>Data Security | KitDocs</title><!-- HEAD_svelte-tuv76i_START --><meta name="description" content="Boostrap your SaaS in weekend with Direcbase"><!-- HEAD_svelte-tuv76i_END --><!-- HEAD_svelte-3cm5o9_START -->
     <meta name="description" content="Data filter and authorization check"><!-- HEAD_svelte-3cm5o9_END -->
 		<!-- Google tag (gtag.js) -->
@@ -116,11 +117,47 @@
 
           <h1>Data Security</h1>
 <p>Data filter and authorization check</p>
-<h2 id="direcstore-data-filter-and-authorization-check" tabindex="-1">
-<a class="header-anchor" href="#direcstore-data-filter-and-authorization-check" aria-hidden="true">#</a> DirecStore - data filter and authorization check</h2>
+<h2 id="overview" tabindex="-1">
+<a class="header-anchor" href="#overview" aria-hidden="true">#</a> Overview</h2>
 <p>The data security rules can be implemented as javascript code on-the-fly to filter data and check user&#39;s authorization in addition to the data query.</p>
 <p>The security rules can be updated directly in the data model object or via the administration UIs.</p>
-<p><img src="/images/data_security.png" alt="Data security check"></p></article>
+<p><img src="/images/data_security.png" alt="Data security check"></p>
+<h2 id="data-filter" tabindex="-1">
+<a class="header-anchor" href="#data-filter" aria-hidden="true">#</a> Data filter</h2>
+<p>A pre-defined tagging template support building additional conditions for the SQL query. For example in the select data rule, we add filter as following:</p>
+<div class="code-fence 576:max-h-[32rem] relative my-8 mx-auto max-h-[60vh] overflow-y-auto rounded-md prefers-dark-scheme scrollbar scroll-contain shadow-xl border-border border lang-javascript" style="background-color: var(--kd-code-fence-bg);">
+
+  <div class="code relative z-0 overflow-hidden"><div class=""><pre class="relative scrollbar overflow-scroll pl-3">        <!-- HTML_TAG_START --><code><span class="line"><span style="color: #A6ACCD">    </span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> checkEmail </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">abc@localhost</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #82AAFF">filter</span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">email = </span><span style="color: #89DDFF">${</span><span style="color: #A6ACCD">checkEmail</span><span style="color: #89DDFF">}`</span></span>
+<span class="line"></span></code><!-- HTML_TAG_END -->
+      </pre></div>
+
+    
+
+    </div></div><p>The direcstore engine will parse the string tagging template and add it to the select query as part of the &quot;where&quot; condition.</p>
+<h2 id="authorization-check" tabindex="-1">
+<a class="header-anchor" href="#authorization-check" aria-hidden="true">#</a> Authorization check</h2>
+<p>The default user authentication model has role based implementation which can be used for checking during data querying.
+For example of rule which allow only admin role to execute the query</p>
+<div class="code-fence 576:max-h-[32rem] relative my-8 mx-auto max-h-[60vh] overflow-y-auto rounded-md prefers-dark-scheme scrollbar scroll-contain shadow-xl border-border border lang-javascript" style="background-color: var(--kd-code-fence-bg);">
+
+  <div class="code relative z-0 overflow-hidden"><div class=""><pre class="relative scrollbar overflow-scroll pl-3">        <!-- HTML_TAG_START --><code><span class="line"><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #A6ACCD">user</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> ext</span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> auth</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">if</span><span style="color: #A6ACCD">(user)</span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #89DDFF">if</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">user</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">roles</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">includes</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">admin</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)) </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">        </span><span style="color: #FF9CAC">true</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #89DDFF">else</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">        </span><span style="color: #FF9CAC">false</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">else</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #FF9CAC">false</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span>
+<span class="line"></span></code><!-- HTML_TAG_END -->
+      </pre></div>
+
+    
+
+    </div></div><p>User role can be maintained in Admin UIs</p>
+<p><img src="/images/user_auth.png" alt="User account"></p></article>
 
       <hr class="border-border mt-20">
 
@@ -136,14 +173,30 @@
 
     <div class="992:flex-1"></div>
 
-    <div class="on-this-page scrollbar pt-8 pb-8 hidden overflow-auto min-w-[160px] sticky right-4 pr-4 1440:right-6 1440:pr-2 1280:block pl-0.5 top-0 max-h-screen" style=""></div></div></div>
+    <div class="on-this-page scrollbar pt-8 pb-8 hidden overflow-auto min-w-[160px] sticky right-4 pr-4 1440:right-6 1440:pr-2 1280:block pl-0.5 top-0 max-h-screen" style=""><h5 class="text-inverse w-full text-left text-lg font-semibold">On this page</h5>
+    <ul class="mt-4 space-y-4 px-2">
+        
+
+        <li class="text-soft hover:text-inverse"><a href="#overview">Overview</a></li>
+
+        
+        
+
+        <li class="text-soft hover:text-inverse"><a href="#data-filter">Data filter</a></li>
+
+        
+        
+
+        <li class="text-soft hover:text-inverse"><a href="#authorization-check">Authorization check</a></li>
+
+        </ul></div></div></div>
 
 
-			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs_direcstore_data-security.meta">{"status":200,"statusText":"","headers":{},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"DirecStore - data filter and authorization check\",\"slug\":\"direcstore-data-filter-and-authorization-check\",\"children\":[]}],\"title\":\"Data Security\",\"description\":\"Data filter and authorization check\",\"frontmatter\":{\"title\":\"Data Security\",\"description\":\"Data filter and authorization check\"},\"lastUpdated\":1685710083159}"}</script>
+			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs_direcstore_data-security.meta">{"status":200,"statusText":"","headers":{},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Overview\",\"slug\":\"overview\",\"children\":[]},{\"level\":2,\"title\":\"Data filter\",\"slug\":\"data-filter\",\"children\":[]},{\"level\":2,\"title\":\"Authorization check\",\"slug\":\"authorization-check\",\"children\":[]}],\"title\":\"Data Security\",\"description\":\"Data filter and authorization check\",\"frontmatter\":{\"title\":\"Data Security\",\"description\":\"Data filter and authorization check\"},\"lastUpdated\":1685710737161}"}</script>
 			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs.sidebar">{"status":200,"statusText":"","headers":{},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Introduction\",\"slug\":\"/help/docs/getting-started/introduction\"},{\"title\":\"Administration UIs\",\"slug\":\"/help/docs/getting-started/admin-dashboard\"}],\"Development Kit Js\":[{\"title\":\"Introduction to SDK Javascript\",\"slug\":\"/help/docs/development-kit-js/introduction\"},{\"title\":\"Authentication\",\"slug\":\"/help/docs/development-kit-js/direcauth\"},{\"title\":\"Data storage\",\"slug\":\"/help/docs/development-kit-js/direcstore\"},{\"title\":\"File storage\",\"slug\":\"/help/docs/development-kit-js/direcfile\"},{\"title\":\"Function call\",\"slug\":\"/help/docs/development-kit-js/direccall\"},{\"title\":\"Administration APIs\",\"slug\":\"/help/docs/development-kit-js/direcadmin\"}],\"Direcstore\":[{\"title\":\"Introduction to data storage in Direcbase\",\"slug\":\"/help/docs/direcstore/introduction\"},{\"title\":\"Data Modeling\",\"slug\":\"/help/docs/direcstore/data-model\"},{\"title\":\"Data Query\",\"slug\":\"/help/docs/direcstore/query-specification\"},{\"title\":\"Data Security\",\"slug\":\"/help/docs/direcstore/data-security\"}]}}"}</script>
 			<script>
 				{
-					__sveltekit_1wawzjs = {
+					__sveltekit_dpehdr = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -153,8 +206,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.e7b83469.js"),
-						import("../../../_app/immutable/entry/app.9833e062.js")
+						import("../../../_app/immutable/entry/start.800fcd66.js"),
+						import("../../../_app/immutable/entry/app.4ba086e1.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 17],
