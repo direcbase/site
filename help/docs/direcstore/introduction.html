@@ -20,10 +20,9 @@
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/contexts.27334177.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/stores.ab146e34.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/kit-docs.6f7a5f7a.js">
-		<link rel="modulepreload" href="../../../_app/immutable/nodes/13.8b9330f3.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/CodeFence.cf30455f.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/Link.5090cb4d.js"><title>Administration APIs | KitDocs</title><!-- HEAD_svelte-tuv76i_START --><meta name="description" content="Boostrap your SaaS in weekend with Direcbase"><!-- HEAD_svelte-tuv76i_END --><!-- HEAD_svelte-3cm5o9_START -->
-    <meta name="description" content="APIs usage for interaction with system admin services"><!-- HEAD_svelte-3cm5o9_END -->
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/14.32f73aa4.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/Link.5090cb4d.js"><title>Introduction to data storage in Direcbase | KitDocs</title><!-- HEAD_svelte-tuv76i_START --><meta name="description" content="Boostrap your SaaS in weekend with Direcbase"><!-- HEAD_svelte-tuv76i_END --><!-- HEAD_svelte-3cm5o9_START -->
+    <meta name="description" content="Direcstore provides core services for data retrieval and manipulation into the data storage engine"><!-- HEAD_svelte-3cm5o9_END -->
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBFXHV0M29"></script>
 		<script>
@@ -84,14 +83,14 @@
               </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direccall" style="">
                   Function call
                   </a>
-              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 text-brand font-semibold" href="/help/docs/development-kit-js/direcadmin" style="border-color: var(--kd-sidebar-border-active);">
+              </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/development-kit-js/direcadmin" style="">
                   Administration APIs
                   </a>
               </li></ul>
         </li>
         <li class="992:mt-10 mt-12 first:mt-0"><h5 class="text-strong 992:mb-3 mb-8 text-lg font-semibold">Direcstore
             </h5>
-          <ul class="border-border space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/direcstore/introduction" style="">
+          <ul class="border-border space-y-3 border-l"><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 text-brand font-semibold" href="/help/docs/direcstore/introduction" style="border-color: var(--kd-sidebar-border-active);">
                   Introduction to data storage in Direcbase
                   </a>
               </li><li class="first:mt-6"><a class="992:py-1 -ml-px flex items-center border-l py-2 pl-4 hover:border-inverse focus-visible:border-inverse text-soft hover:text-inverse focus-visible:text-inverse border-transparent font-normal" href="/help/docs/direcstore/data-model" style="">
@@ -110,49 +109,29 @@
 
     <main class="w-full overflow-x-hidden min-h-screen px-8 992:px-16 pt-8" style="max-width: var(--kd-main-max-width, var(--kd-article-max-width));">
 
-      <article class="markdown prose dark:prose-invert z-10 max-w-[var(--kd-article-max-width)]"><p class="text-brand mb-3.5 text-[15px] font-semibold leading-6">Development Kit Js</p>
+      <article class="markdown prose dark:prose-invert z-10 max-w-[var(--kd-article-max-width)]"><p class="text-brand mb-3.5 text-[15px] font-semibold leading-6">Direcstore</p>
 
-          <h1>Administration APIs</h1>
-<p>APIs usage for interaction with system admin services</p>
-<h2 id="direcadmin-system-admin-apis" tabindex="-1">
-<a class="header-anchor" href="#direcadmin-system-admin-apis" aria-hidden="true">#</a> DirecAdmin - system admin APIs</h2>
-<p>Import admin module</p>
-<div class="code-fence 576:max-h-[32rem] relative my-8 mx-auto max-h-[60vh] overflow-y-auto rounded-md prefers-dark-scheme scrollbar scroll-contain shadow-xl border-border border lang-javascript" style="background-color: var(--kd-code-fence-bg);">
-
-  <div class="code relative z-0 overflow-hidden"><div class=""><pre class="relative scrollbar overflow-scroll pl-3">        <!-- HTML_TAG_START --><code><span class="line"><span style="color: #89DDFF">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">direcadmin</span><span style="color: #F07178"> </span><span style="color: #89DDFF">as</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">da</span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">direcbase</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
-<span class="line"></span></code><!-- HTML_TAG_END -->
-      </pre></div>
-
-    
-
-    </div></div><h3 id="list-of-methods" tabindex="-1">
-<a class="header-anchor" href="#list-of-methods" aria-hidden="true">#</a> List of methods</h3>
-<ul><li>Model admin methods
-<ul><li>editModel: create or delete a data model (table/view definition)</li>
-<li>editRules: edit data access rules select/insert/edit/delete for each data model</li>
-<li>deleteModel: delete a data model</li></ul></li>
-<li>User admin methods
-<ul><li>createUser: create user</li>
-<li>editUser: edit user data</li>
-<li>deleteUser: delete user</li>
-<li>resetUserPwd: reset user password</li></ul></li>
-<li>System admin methods
-<ul><li>getMetrics: get system statistics</li>
-<li>getEnv: get environment parameters</li>
-<li>setEnv: set environment parameters</li></ul></li></ul></article>
+          <h1>Introduction to data storage in Direcbase</h1>
+<p>Direcstore provides core services for data retrieval and manipulation into the data storage engine</p>
+<h2 id="data-model" tabindex="-1">
+<a class="header-anchor" href="#data-model" aria-hidden="true">#</a> Data Model</h2>
+<p>Data model is representation of a table or a view at runtime.</p>
+<h2 id="data-query" tabindex="-1">
+<a class="header-anchor" href="#data-query" aria-hidden="true">#</a> Data Query</h2>
+<p>Data retrieval and manipulation via web service endpoint &quot;<host>/api/v1/que&quot;. The endpoint accepts a query object which will be parsed and executed by the data storage engine (direcstore).</host></p></article>
 
       <hr class="border-border mt-20">
 
         <div class="992:text-xl flex items-center pt-12 pb-20 text-lg font-semibold text-gray-300"><div class="mb-4 flex flex-col items-start"><span class="text-inverse ml-3 mb-4 inline-block">Previous</span>
               
-  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/development-kit-js/direccall" data-sveltekit-prefetch><span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">&lt;-</span>
-    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3 ">Function call</span>
+  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/development-kit-js/direcadmin" data-sveltekit-prefetch><span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">&lt;-</span>
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 -translate-x-3 ">Administration APIs</span>
     </a></div>
 
           <div class="ml-auto mb-4 flex flex-col items-end"><span class="text-inverse mr-3 mb-4 inline-block">Next</span>
               
-  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/direcstore/introduction" data-sveltekit-prefetch>
-    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">Introduction to data storage in Direcbase</span>
+  <a class="group transform-gpu text-base font-medium transition-transform hover:scale-105 text-soft hover:text-inverse hover:text-inverse" href="/help/docs/direcstore/data-model" data-sveltekit-prefetch>
+    <span class="inline-block transform transition-transform duration-100 group-hover:translate-x-0 translate-x-2">Data Modeling</span>
     <span class="opacity-0 transition-opacity duration-100 group-hover:visible group-hover:opacity-100 inline-block">-&gt;</span></a></div></div>
 
       </main>
@@ -163,15 +142,17 @@
     <ul class="mt-4 space-y-4 px-2">
         
 
-        <li class="text-soft hover:text-inverse"><a href="#direcadmin-system-admin-apis">DirecAdmin - system admin APIs</a></li>
+        <li class="text-soft hover:text-inverse"><a href="#data-model">Data Model</a></li>
 
-        <ul class="space-y-3"><li class="group group flex text-soft hover:text-inverse"><svg viewBox="0 0 24 24" width="20" height="20" class="group-hover:text-inverse mt-px mr-px text-soft"><!-- HTML_TAG_START --><path fill="currentColor" d="M12.172 12L9.343 9.173l1.415-1.414L15 12l-4.242 4.242l-1.415-1.414L12.172 12Z"/><!-- HTML_TAG_END --></svg>
-                <a href="#list-of-methods">List of methods</a>
-              </li>
-          </ul></ul></div></div></div>
+        
+        
+
+        <li class="text-soft hover:text-inverse"><a href="#data-query">Data Query</a></li>
+
+        </ul></div></div></div>
 
 
-			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs_development-kit-js_direcadmin.meta">{"status":200,"statusText":"","headers":{},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"DirecAdmin - system admin APIs\",\"slug\":\"direcadmin-system-admin-apis\",\"children\":[{\"level\":3,\"title\":\"List of methods\",\"slug\":\"list-of-methods\",\"children\":[]}]}],\"title\":\"Administration APIs\",\"description\":\"APIs usage for interaction with system admin services\",\"frontmatter\":{\"title\":\"Administration APIs\",\"description\":\"APIs usage for interaction with system admin services\"},\"lastUpdated\":1685620242737}"}</script>
+			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs_direcstore_introduction.meta">{"status":200,"statusText":"","headers":{},"body":"{\"excerpt\":\"\",\"headers\":[{\"level\":2,\"title\":\"Data Model\",\"slug\":\"data-model\",\"children\":[]},{\"level\":2,\"title\":\"Data Query\",\"slug\":\"data-query\",\"children\":[]}],\"title\":\"Introduction to data storage in Direcbase\",\"description\":\"Direcstore provides core services for data retrieval and manipulation into the data storage engine\",\"frontmatter\":{\"title\":\"Introduction to data storage in Direcbase\",\"description\":\"Direcstore provides core services for data retrieval and manipulation into the data storage engine\"},\"lastUpdated\":1685708207969}"}</script>
 			<script type="application/json" data-sveltekit-fetched data-url="/kit-docs/help_docs.sidebar">{"status":200,"statusText":"","headers":{},"body":"{\"links\":{\"Getting Started\":[{\"title\":\"Introduction\",\"slug\":\"/help/docs/getting-started/introduction\"},{\"title\":\"Administration UIs\",\"slug\":\"/help/docs/getting-started/admin-dashboard\"}],\"Development Kit Js\":[{\"title\":\"Introduction to SDK Javascript\",\"slug\":\"/help/docs/development-kit-js/introduction\"},{\"title\":\"Authentication\",\"slug\":\"/help/docs/development-kit-js/direcauth\"},{\"title\":\"Data storage\",\"slug\":\"/help/docs/development-kit-js/direcstore\"},{\"title\":\"File storage\",\"slug\":\"/help/docs/development-kit-js/direcfile\"},{\"title\":\"Function call\",\"slug\":\"/help/docs/development-kit-js/direccall\"},{\"title\":\"Administration APIs\",\"slug\":\"/help/docs/development-kit-js/direcadmin\"}],\"Direcstore\":[{\"title\":\"Introduction to data storage in Direcbase\",\"slug\":\"/help/docs/direcstore/introduction\"},{\"title\":\"Data Modeling\",\"slug\":\"/help/docs/direcstore/data-model\"},{\"title\":\"Data Query\",\"slug\":\"/help/docs/direcstore/query-specification\"}]}}"}</script>
 			<script>
 				{
@@ -189,7 +170,7 @@
 						import("../../../_app/immutable/entry/app.64735624.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 2, 13],
+							node_ids: [0, 2, 14],
 							data,
 							form: null,
 							error: null
